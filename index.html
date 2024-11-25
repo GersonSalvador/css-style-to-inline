@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=800, initial-scale=1.0">
+  <title>CSS to inline style</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background-color: #222;
+    font-family: sans-serif;
+  }
+  #code {
+    display: none;
+  }
+  section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 16px;
+    width: 50%;
+    flex-direction: column;
+    color: #eee;
+
+    div {
+      width: 100%;
+      position: relative;
+    }
+
+    .css {
+      position: relative;
+
+      button {
+        position: absolute;
+        right: 0;
+        top: -18px;
+        padding: 8px;
+        background-color: #3a6a3a;
+        color: #ddd;
+        border: 1px solid #000;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      border: 1px solid #000;
+      overflow: auto;
+      padding: 8px;
+      border-radius: 8px;
+      resize: none;
+      height: calc(50vh - 46px);
+      background-color: #3a3a3a;
+      color: #eee;
+    }
+  }
+  #result {
+    border: 1px solid #000;
+    border-radius: 8px;
+    overflow: auto;
+    width: 50%;
+  }
+</style>
+<body>
+  <section>
+    <div>
+      <p>HTML Code</p>
+      <textarea id="html"></textarea>
+    </div>
+    <div class="css">
+      <button type="button" onclick="exportCode()">Export</button>
+      <p>CSS Code</p>
+      <textarea id="css"></textarea>
+    </div>
+  </section>
+  <iframe id="result"></iframe>
+  <script src="script.js"></script>
+</body>
+</html>
